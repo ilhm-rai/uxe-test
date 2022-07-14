@@ -144,7 +144,6 @@ main {
 }
 
 .product-item__img {
-    height: 135px;
     object-fit: cover;
     border-radius: 20px 20px 0 0;
 }
