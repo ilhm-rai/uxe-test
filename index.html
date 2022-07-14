@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <title>UXE Test Assesment</title>
+        <link rel="stylesheet" href="./css/main.css" type="text/css" />
+        <script>
+            var products = [
+                {
+                    name: "NIKE AJ1 Retro High White University Blue Black",
+                    discountPrice: "3.050.000",
+                    price: "7.100.000",
+                    discount: "50",
+                    image: "./img/product-item__img.jpeg"
+                },
+                {
+                    name: "NIKE AJ1 Retro High White University Blue Black",
+                    discountPrice: "3.050.000",
+                    price: "7.100.000",
+                    discount: "50",
+                    image: "./img/product-item__img.jpeg"
+                },
+                {
+                    name: "NIKE AJ1 Retro High White University Blue Black",
+                    discountPrice: "3.050.000",
+                    price: "7.100.000",
+                    discount: "50",
+                    image: "./img/product-item__img.jpeg"
+                },
+                {
+                    name: "NIKE AJ1 Retro High White University Blue Black",
+                    discountPrice: "3.050.000",
+                    price: "7.100.000",
+                    discount: "50",
+                    image: "./img/product-item__img.jpeg"
+                },
+                {
+                    name: "NIKE AJ1 Retro High White University Blue Black",
+                    discountPrice: "3.050.000",
+                    price: "7.100.000",
+                    discount: "50",
+                    image: "./img/product-item__img.jpeg"
+                },
+                {
+                    name: "NIKE AJ1 Retro High White University Blue Black",
+                    discountPrice: "3.050.000",
+                    price: "7.100.000",
+                    discount: "50",
+                    image: "./img/product-item__img.jpeg"
+                },
+                {
+                    name: "NIKE AJ1 Retro High White University Blue Black",
+                    discountPrice: "3.050.000",
+                    price: "7.100.000",
+                    discount: "50",
+                    image: "./img/product-item__img.jpeg"
+                },
+            ];
+        </script>
+    </head>
+    <body>
+        <nav class="main-nav">
+            <div class="main-nav__brand">
+                <img src="./img/blibli-logo__white.png" alt="blibli brand logo" style="height: 44px"/>
+            </div>
+        </nav>
+        <main>
+            <section class="container intro">
+                <div class="box box1 fb-50">
+                    1
+                </div>
+                 <div class="box box2 fb-50">
+                    2
+                </div>
+            </section>
+            <section class="container jumbotron">
+                <div class="box box3 fb-100">
+                    3
+                </div>
+                <div class="box box4 fb-100">
+                    4
+                </div>
+            </section>
+            <section class="product-wrapper">
+                <ul class="product-container" id="products" role="list">
+                    <!-- list of product -->
+                </ul>
+            </section>
+        </main>
+        <footer class="main-footer">
+            <div class="main-footer__description">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed urna non lectus laoreet porttitor vel sagittis tortor. Maecenas ipsum justo, vehicula eget odio at, tristique iaculis massa. Nunc vel rhoncus urna. Nullam elementum metus non turpis interdum porta. Quisque auctor diam vitae augue commodo, eget lacinia velit laoreet. Nulla tempor porta augue luctus hendrerit. Cras elementum nisi quis ipsum varius, ut mollis lectus euismod. Nam eu molestie diam.</p>
+            </div>
+            <p class="main-footer__copyright">&copy; 2022 PT Global Digital Niaga</p>
+        </footer>
+        <script src="./js/main.js"></script>
+        <script>
+            const productContainer = document.querySelector("#products");
+            productListElm(products, productContainer);
+        </script>
+    </body>
+</html>
