@@ -1,0 +1,312 @@
+/***
+    The new CSS reset - version 1.7.2 (last updated 23.6.2022)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+*:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+    all: unset;
+    display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a, button {
+    cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+    list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+    max-width: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+    border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input, textarea {
+    -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+    white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+    -webkit-appearance: revert;
+    appearance: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+    color: unset;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+    display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly.
+   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable="false"])) {
+    -moz-user-modify: read-write;
+    -webkit-user-modify: read-write;
+    overflow-wrap: break-word;
+    -webkit-line-break: after-white-space;
+    -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+    -webkit-user-drag: element;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    background-color: #eeeeee;
+}
+
+a {
+    color: #0095da;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #0096D9;
+    width: 100%;
+}
+
+.product-wrapper {
+    display: flex;
+    overflow-x: auto;
+    margin-bottom: 4%;
+    padding: 5px 2px;
+}
+
+.product-container {
+    display: flex;
+    list-style-type: none;
+}
+
+.product-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.product-item {
+    width: 132px;
+    margin-right: 5px;
+    background: #fff;
+    border-radius: 20px;
+    -ms-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+    -moz-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+    -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+}
+
+.product-item__img {
+    height: 135px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+}
+
+.product-item__info {
+    padding: 8px;
+}
+
+.product-item__name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    font-weight: bold;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.product-item__price {
+    margin-top: 8px;
+}
+
+.product-item__price--discount {
+    color: #F7931E;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.product-item__price--normal {
+    color: #666;
+    margin-top: 8px;
+    font-size: 12px;
+}
+
+.product-item__discount {
+    background: rgba(250, 128, 114, 0.8);
+    color: #D61C4E;
+    padding: 3px 6px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.product-item__action {
+    padding: 8px 8px 12px 8px;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+    -webkit-appearance: none;
+}
+
+.button-blue {
+    background-color: #0096D9;
+    color: #fff;
+}
+
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    gap: 2%;
+}
+
+.fb-100 {
+    flex-basis: 100%;
+}
+
+.fb-50 {
+    flex-basis: 48%;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 36px;
+    height: 180px;
+    margin-bottom: 4%;
+}
+
+.box1 {
+    background-color: lightgreen;
+}
+
+.box2 {
+    background-color: lightblue;
+}
+
+.box3 {
+    background-color: purple;
+    order: 2;
+}
+
+.box4{
+    background-color: salmon;
+    order: 1;
+}
+
+.jumbotron {
+    order: 1;
+}
+
+.product-wrapper {
+    order: 2;
+}
+
+.intro {
+    order: 3;
+}
+
+.main-footer {
+    background-color: #ddd;
+    padding: 20px;
+    text-align: center;
+}
+
+.main-footer__description {
+    text-align: left;
+}
+
+.main-footer__copyright {
+    margin-top: 30px;
+}
+
+@media only screen and (min-width: 517px) {
+    .main-nav {
+        justify-content: space-between;
+    }
+    
+    .intro {
+        order: 1;
+    }
+    
+    .jumbotron {
+        order: 2;
+    }
+    
+    .product-wrapper {
+        order: 3;
+    }
+    
+    .product-item {
+        width: 182px;
+    }
+    
+    .box3 {
+        order: 1;
+    }
+    
+    .box4 {
+        order: 2;
+    }
+}
