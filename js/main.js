@@ -28,13 +28,12 @@ let productListElm = function(products, productContainer) {
     productContainer.innerHTML = products;
 }
 
-var coll = document.getElementsByClassName("collapsible");
-var i;
+let coll = document.getElementsByClassName("collapsible");
 
-for (i = 0; i < coll.length; i++) {
+for (let i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
     this.classList.toggle("active");
-    var content = this.previousElementSibling;
+    let content = this.previousElementSibling;
     if (content.style.maxHeight){
       content.style.maxHeight = null;
       this.innerText = "Expand all";
@@ -58,3 +57,41 @@ document.addEventListener("scroll", function() {
         buttonToTop.style.display = null;
     }
 });
+
+const productWrapper = document.querySelector(".product-wrapper");
+const nextButton = document.querySelector(".next");
+const prevButton = document.querySelector(".prev");
+
+productWrapper.addEventListener("scroll", function() {
+    nextPrevButton();
+})
+
+nextButton.addEventListener("click", function() {
+    productWrapper.scrollLeft += 30;
+    nextPrevButton();
+});
+
+prevButton.addEventListener("click", function() {
+    productWrapper.scrollLeft -= 30;
+    nextPrevButton();
+});
+
+let nextPrevButton = function() {
+    let scrollLeft = productWrapper.scrollLeft;
+    let scrollWidth = productWrapper.scrollWidth;
+    let offsetWidth = productWrapper.offsetWidth;
+    console.log(scrollWidth);
+    if (scrollLeft === 0 && scrollWidth > 0) {
+        prevButton.style.display = null;
+        nextButton.style.display = "block";
+    } else if (
+        scrollLeft > 0 && 
+        (scrollLeft + offsetWidth) < scrollWidth) {
+        prevButton.style.display = "block";
+        nextButton.style.display = "block"
+    } else {
+        nextButton.style.display = null;
+    }
+}
+
+nextPrevButton();
