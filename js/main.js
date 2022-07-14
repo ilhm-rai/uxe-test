@@ -27,3 +27,34 @@ let productListElm = function(products, productContainer) {
     )).reduce((acc, curr) => acc + curr);
     productContainer.innerHTML = products;
 }
+
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.previousElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+      this.innerText = "Expand all";
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+      this.innerText = "Collapse all";
+    }
+  });
+}
+
+const buttonToTop = document.querySelector(".button-to-top");
+
+buttonToTop.addEventListener("click", function() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+});
+
+document.addEventListener("scroll", function() {
+    if (window.scrollY > 0) {
+        buttonToTop.style.display = "block";
+    } else {
+        buttonToTop.style.display = null;
+    }
+});
