@@ -92,13 +92,17 @@
         <footer class="main-footer">
             <div class="main-footer__description">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed urna non lectus laoreet porttitor vel sagittis tortor. Maecenas ipsum justo, vehicula eget odio at, tristique iaculis massa. Nunc vel rhoncus urna. Nullam elementum metus non turpis interdum porta. Quisque auctor diam vitae augue commodo, eget lacinia velit laoreet. Nulla tempor porta augue luctus hendrerit. Cras elementum nisi quis ipsum varius, ut mollis lectus euismod. Nam eu molestie diam.</p>
+                <button class="button text-blue collapsible active">Collapse all</button>
             </div>
             <p class="main-footer__copyright">&copy; 2022 PT Global Digital Niaga</p>
         </footer>
+        <button class="button button-white button-circle button-to-top" type="submit">&#8593;</button>
         <script src="./js/main.js"></script>
         <script>
             const productContainer = document.querySelector("#products");
+            const footerDescription = document.querySelector(".main-footer__description p")
             productListElm(products, productContainer);
+            footerDescription.style.maxHeight = footerDescription.scrollHeight + 20 + "px";
         </script>
     </body>
 </html>
